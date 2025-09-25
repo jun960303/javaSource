@@ -35,5 +35,40 @@ public class IfEx2 {
             re = 'D';
         }
         System.out.println("등급 : " + re);
+
+        // switch (re) {
+        // case 100:
+        // case 99:
+        // case 98:
+        // case 97:
+        // case 96:
+        // case 95:
+        // case 94:
+        // case 93:
+        // case 92:
+        // case 91:
+        // case 90:
+        // re = 'A';
+        // break;
+
+        // default:
+        // break;
+        // }
+
+        switch (re / 10) {
+            case 10:
+            case 9:
+                re = 'A';
+                break;
+            case 8:
+                re = 'B';
+                break;
+            case 7:
+                re = 'C';
+                break;
+            default:
+                re = 'D';
+                break;
+        }
     }
 }
