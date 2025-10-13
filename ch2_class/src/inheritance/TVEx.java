@@ -2,19 +2,18 @@ package inheritance;
 
 public class TVEx {
     public static void main(String[] args) {
-        //인스턴스 생성가능
+        // 인스턴스 생성가능
         CaptionTV cTv = new CaptionTV(48, 7, false, "black");
-        
+
         // TV tv = new TV(0, 0, false, null);
 
-    
-        //자식 클래스에서 사용가능한 것들
+        // 자식 클래스에서 사용가능한 것들
         // 1. 부모의 멤버변수
         // 2. 부모의 메소드
         // 3. 자식 클래스의 멤버변수 및 메소드
-        
+
         cTv.channel = 8;
         cTv.setPower(true);
         cTv.displayCaption("자막사용가능");
-    }   
+    }
 }
