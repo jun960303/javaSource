@@ -1,0 +1,25 @@
+Generics : 다양한 타입의 객체들을 다루는 메서드나 컬렉션 클래스 컴파일 시의 타입 체크 
+- Box2<T>
+  T : Type variable - 타입 변수 혹은 타입 매개변수
+  Box2 : 원시 타입
+
+E : Element
+
+와일드 카드
+<? extends T> : T와 그 자손들만 가능
+<? super T> : T와 그 조상들만 가능
+<?> : 제한없음
+
+Collections.sort​(List<T> list, Comparator<? super T> c)
+ - 첫번째 인자 : List, List 자식(ArrayList, LinkedList, Stack...)
+     List<String> list = new ArrayList<>();
+ - 두번째 인자 : 
+     Comparator<? super String> c : Comparator, Comparator 자식
+     String 이거나 String 부모
+
+
+sort() : sort 대상의 클래스가 Comparator(새로운 정렬기준) 구현하거나 
+Comparable(기본 정렬 기준 - 오름,내림) 구현 해야함
+
+List<Apple> apples = new ArrayList<>();
+Collections.sort(apples, Comparator<>) : Apple, Fruit, Object
