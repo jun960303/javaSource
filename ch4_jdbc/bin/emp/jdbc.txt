@@ -1,0 +1,7 @@
+JDBC 프로그래밍 순서
+1. 드라이버로드 
+Class.forName("oracle.jdbc.OracleDriver"); // 오라클
+Class.forName("com.mysql.cj.jdbc.Driver"); // mysql
+
+2. Connection 얻기 
+(1) 오라클 
