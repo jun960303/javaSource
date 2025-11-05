@@ -10,7 +10,7 @@ public class Update {
     public static void main(String[] args) {
         Connection con = null;
         PreparedStatement pstmt = null;
-        ResultSet rs = null;
+
         Scanner sc = new Scanner(System.in);
 
         try {
@@ -22,10 +22,10 @@ public class Update {
 
             con = DriverManager.getConnection(url, user, password);
 
-            // 조회할 학생 아이디 입력받기
-            System.out.print("아이디 입력 : ");
+            // 수정할 학생아이디 입력받기
+            System.out.print("아이디 입력 >> ");
             String studentId = sc.nextLine();
-            System.out.print("키 입력 : ");
+            System.out.print("키 입력 >> "); // 168.7
             double height = Double.parseDouble(sc.nextLine());
 
             String sql = "update student set height=? where student_id=?";
@@ -34,6 +34,7 @@ public class Update {
             pstmt.setString(2, studentId);
             int rows = pstmt.executeUpdate();
             System.out.println(rows > 0 ? "수정성공" : "수정실패");
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

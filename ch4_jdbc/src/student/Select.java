@@ -22,6 +22,7 @@ public class Select {
 
             String sql = "select * from student";
             pstmt = con.prepareStatement(sql);
+
             rs = pstmt.executeQuery();
 
             while (rs.next()) {

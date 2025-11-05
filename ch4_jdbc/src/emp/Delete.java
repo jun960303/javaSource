@@ -3,23 +3,22 @@ package emp;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 public class Delete {
     public static void main(String[] args) {
-        // db 서버연결
+        // db 서버 연결
 
-        // 1. 드라이버 로드
         try {
+            // 1. 드라이버 로드
             Class.forName("oracle.jdbc.OracleDriver");
             String url = "jdbc:oracle:thin:@localhost:1521:xe";
             String user = "scott";
             String password = "tiger";
-            // 2. DB연결
+            // 2. DB 연결
             Connection con = DriverManager.getConnection(url, user, password);
 
             // 3. sql 구문
-            String sql = "Delete from emp where empno = 7499";
+            String sql = "delete from emp where empno=7499";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
             int result = pstmt.executeUpdate();

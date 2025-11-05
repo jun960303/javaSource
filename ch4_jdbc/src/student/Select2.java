@@ -22,8 +22,8 @@ public class Select2 {
 
             con = DriverManager.getConnection(url, user, password);
 
-            // 조회할 학생 아이디 입력받기
-            System.out.println("아이디 입력 : ");
+            // 조회할 학생아이디 입력받기
+            System.out.print("아이디 입력 >> ");
             String studentId = sc.nextLine();
 
             String sql = "select * from student where student_id=?";
@@ -36,7 +36,7 @@ public class Select2 {
                 String name = rs.getString("name");
                 double height = rs.getDouble("height");
                 String deptId = rs.getString("dept_id");
-                System.out.printf("%s\t%s\t%d\t%s\n", id, name, height, deptId);
+                System.out.printf("%s\t%s\t%.2f\t%s\n", id, name, height, deptId);
             }
         } catch (Exception e) {
             e.printStackTrace();

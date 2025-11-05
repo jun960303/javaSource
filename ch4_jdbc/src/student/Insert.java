@@ -10,7 +10,7 @@ public class Insert {
     public static void main(String[] args) {
         Connection con = null;
         PreparedStatement pstmt = null;
-        ResultSet rs = null;
+
         Scanner sc = new Scanner(System.in);
 
         try {
@@ -22,18 +22,17 @@ public class Insert {
 
             con = DriverManager.getConnection(url, user, password);
 
-            // 조회할 학생 아이디 입력받기
-            System.out.print("아이디 입력 : ");
+            // 입력할 학생아이디 입력받기
+            System.out.print("아이디 입력 >> ");
             String studentId = sc.nextLine();
-            System.out.print("이름 입력 : ");
+            System.out.print("이름 입력 >> ");
             String name = sc.nextLine();
-            System.out.print(" 키 입력 : ");
+            System.out.print("키 입력 >> ");
             double height = Double.parseDouble(sc.nextLine());
-            System.out.print("학과코드 입력 : ");
+            System.out.print("학과코드 입력 >> ");
             String deptId = sc.nextLine();
 
-            // 부모삭제
-            String sql = "INSERT INTO student(student_id,name,height,dept_id) VALUES (?,?,?,?);";
+            String sql = "INSERT INTO STUDENT(student_id,name,height,dept_id) values(?,?,?,?)";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, studentId);
             pstmt.setString(2, name);

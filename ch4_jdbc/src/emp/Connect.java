@@ -5,15 +5,15 @@ import java.sql.DriverManager;
 
 public class Connect {
     public static void main(String[] args) {
-        // db 서버연결
+        // db 서버 연결
 
-        // 1. 드라이버 로드
         try {
+            // 1. 드라이버 로드
             Class.forName("oracle.jdbc.OracleDriver");
             String url = "jdbc:oracle:thin:@localhost:1521:xe";
             String user = "scott";
             String password = "tiger";
-            // 2. DB연결
+            // 2. DB 연결
             Connection con = DriverManager.getConnection(url, user, password);
             System.out.println("연결되었습니다.");
         } catch (Exception e) {
